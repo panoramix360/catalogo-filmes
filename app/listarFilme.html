@@ -1,0 +1,16 @@
+<div ng-controller="ListarFilmeController">
+	<table class="table">
+		<thead>
+			<th>#</th>
+			<th>Nome do Filme</th>
+			<th>Prateleira</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="filme in filmes">
+				<td>{{filme.id}}</td>
+				<td>{{filme.nome}}</td>
+				<td>{{filme.prateleira}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
