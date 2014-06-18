@@ -1,0 +1,12 @@
+
+- Implementar os métodos que salvam os filmes.
+- Melhorar a estrutura do angular.
+
+Dados do Filme:
+- nome
+- prateleira
+- ano
+- genero
+- atores principal
+
+A aplicação será no esquema de abas, o usuário poderá inserir/editar filmes.

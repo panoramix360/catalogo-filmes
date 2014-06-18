@@ -1,0 +1,16 @@
+<div ng-controller="AdicionarFilmeController">
+	<form role="form" ng-submit="adicionarFilme()">
+		<div class="form-group">
+			<label for="nome">Nome do Filme</label>
+			<input type="text" class="form-control" ng-model="nome" id="nome" placeholder="Digite o nome do filme" />
+		</div>
+		
+		<div class="form-group">
+			<label for="prateleira">Prateleira</label>
+			<input type="text" class="form-control" ng-model="prateleira" id="prateleira" placeholder="Digite o prateleira do filme" />
+		</div>
+		
+		<br />
+		<button class="btn btn-primary" ng-click="adicionarFilme(nome, prateleira)">Adicionar</button>
+	</form>
+</div>

@@ -1,18 +1,20 @@
 var app = angular.module('CatalogoFilme', ['MenuModule', 'MovieModule', 'ngRoute']);
 
+var filmes = [];
+
 app.controller('MainController', function($scope, Menus) {
 	$scope.menus = Menus.query();
-
-	$scope.countFilmes = 1;
 });
 
 function ListarFilmeController($scope, Filmes) {
-	$scope.filmes = Filmes.query();
+	filmes = Filmes.query();
+
+	$scope.filmes = filmes;
 }
 
 function AdicionarFilmeController($scope) {
-	$scope.adicionarFilme = function() {
-		$scope.countFilmes++;
+	$scope.adicionarFilme = function(nomeFilme, prateleira) {
+		filmes.push({ id: id++, nome: nomeFilme, prateleira: prateleira });
 	};
 }
 
@@ -35,7 +37,7 @@ movieModule.factory('Filmes', function() {
 	var filmes = {};
 
 	filmes.query = function() {
-		return [ { id: 1, nome: 'Os Vingadores', prateleira: '2' } ];
+		return [ { id: id++, nome: 'Os Vingadores', prateleira: '2' } ];
 	};
 
 	return filmes;
