@@ -1,1 +1,0 @@
-python catalogo_filmes/manage.py sql app & pause
