@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="catalogoApp">
 <head>
 	<meta charset="utf-8" />
 	<title>Catálogo de filmes</title>
 	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link rel="stylesheet" href="css/bootstrap-theme.css" />
 	<link rel="stylesheet" href="css/app.css" />
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/angular.js"></script>
-	<script src="js/angular.routes.js"></script>
-
-	<script src="js/controllers.js"></script>
-	<script src="js/routes.js"></script>
 </head>
-<body ng-controller="MainController">
-
+<body ng-controller="CatalogoFilmeCtrl">
 	<div class="container">
 		<h1>Catálogo de Filmes</h1>
 
 		<ul class="nav nav-pills">
-			<li ng-repeat="menu in menus"><a ng-href="{{menu.url}}">{{menu.text}}</a></li>
+			<li ng-repeat="item in filmes"><a ng-href="{{item.prateleira}}">{{item.nome}}</a></li>
 		</ul>
 
 		<br />
 
 		<div ng-view></div>
 	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/angular.js"></script>
+	<script src="scripts/angular.routes.js"></script>
+
+	<script>
+		var app = angular.module('catalogoApp', ['ngRoute']);
+	</script>
+	<script src="model/entidades.js"></script>
+	<script src="controllers/catalogoFilme.js"></script>
 </body>
 </html>

@@ -2,4 +2,4 @@ var connect = require('connect');
 
 connect.createServer(
 	connect.static('../catalogo-filmes')
-).listen(5000);
+).listen(8000);
